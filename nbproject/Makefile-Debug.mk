@@ -15,8 +15,8 @@ NM=nm
 CCADMIN=CCadmin
 RANLIB=avr-ranlib
 CC=avr-gcc
-CCC=avr-c++
-CXX=avr-c++
+CCC=avr-g++
+CXX=avr-g++
 FC=gfortran
 AS=avr-as
 AR=avr-ar
@@ -36,7 +36,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/LiquidCrystal/LiquidCrystal.o
+	${OBJECTDIR}/LiquidCrystal/LiquidCrystal.o \
+	${OBJECTDIR}/Servo/avr/Servo.o \
+	${OBJECTDIR}/Servo/sam/Servo.o \
+	${OBJECTDIR}/Servo/samd/Servo.o
 
 
 # C Compiler Flags
@@ -68,6 +71,21 @@ ${OBJECTDIR}/LiquidCrystal/LiquidCrystal.o: LiquidCrystal/LiquidCrystal.cpp
 	${MKDIR} -p ${OBJECTDIR}/LiquidCrystal
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../core/core -I../core -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LiquidCrystal/LiquidCrystal.o LiquidCrystal/LiquidCrystal.cpp
+
+${OBJECTDIR}/Servo/avr/Servo.o: Servo/avr/Servo.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Servo/avr
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../core/core -I../core -IServo -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Servo/avr/Servo.o Servo/avr/Servo.cpp
+
+${OBJECTDIR}/Servo/sam/Servo.o: Servo/sam/Servo.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Servo/sam
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../core/core -I../core -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Servo/sam/Servo.o Servo/sam/Servo.cpp
+
+${OBJECTDIR}/Servo/samd/Servo.o: Servo/samd/Servo.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Servo/samd
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../core/core -I../core -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Servo/samd/Servo.o Servo/samd/Servo.cpp
 
 # Subprojects
 .build-subprojects:

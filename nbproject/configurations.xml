@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -7,6 +7,21 @@
       <logicalFolder name="f1" displayName="LiquidCrystal" projectFiles="true">
         <itemPath>LiquidCrystal/LiquidCrystal.cpp</itemPath>
         <itemPath>LiquidCrystal/LiquidCrystal.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Servo" displayName="Servo" projectFiles="true">
+        <logicalFolder name="avr" displayName="avr" projectFiles="true">
+          <itemPath>Servo/avr/Servo.cpp</itemPath>
+          <itemPath>Servo/avr/ServoTimers.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="sam" displayName="sam" projectFiles="true">
+          <itemPath>Servo/sam/Servo.cpp</itemPath>
+          <itemPath>Servo/sam/ServoTimers.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="samd" displayName="samd" projectFiles="true">
+          <itemPath>Servo/samd/Servo.cpp</itemPath>
+          <itemPath>Servo/samd/ServoTimers.h</itemPath>
+        </logicalFolder>
+        <itemPath>Servo/Servo.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -25,7 +40,7 @@
   <confs>
     <conf name="Debug" type="3">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>Arduino|WinAVR</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -55,6 +70,32 @@
       </item>
       <item path="LiquidCrystal/LiquidCrystal.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Servo/Servo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servo/avr/Servo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Servo/avr/ServoTimers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servo/sam/Servo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Servo/sam/ServoTimers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servo/samd/Servo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Servo/samd/ServoTimers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="SourceFiles/Servo/avr">
+        <cTool>
+          <incDir>
+            <pElem>Servo</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>Servo</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
@@ -95,6 +136,20 @@
       <item path="LiquidCrystal/LiquidCrystal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="LiquidCrystal/LiquidCrystal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servo/Servo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servo/avr/Servo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Servo/avr/ServoTimers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servo/sam/Servo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Servo/sam/ServoTimers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Servo/samd/Servo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Servo/samd/ServoTimers.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
